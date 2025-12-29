@@ -212,52 +212,52 @@
 
 /* Auth links */
 .auth-links {
-  margin-top: 12px;
+    margin-top: 12px;
 }
 
 .link-btn {
-  background: none;
-  border: none;
-  color: #38bdf8;
-  font-size: 13px;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: none;
-  transition: color 0.15s ease;
+    background: none;
+    border: none;
+    color: #38bdf8;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
 }
 
 .link-btn:hover {
-  color: #0ea5e9;
-  text-decoration: underline;
+    color: #0ea5e9;
+    text-decoration: underline;
 }
 
 /* Switcher (Don't have account → Register) */
 .auth-switcher {
-  margin-top: 20px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #64748b;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #64748b;
 }
 
 .switch-link {
-  background: none;
-  border: none;
-  color: #38bdf8;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: none;
-  transition: color 0.15s ease;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+    background: none;
+    border: none;
+    color: #38bdf8;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .switch-link:hover {
-  color: #0ea5e9;
+    color: #0ea5e9;
 }

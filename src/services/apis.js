@@ -22,5 +22,6 @@ export const endpoints = {
     LOGOUT_API: BaseURL + "/auth/logout",
     LOGOUT_ALL_API: BaseURL + "/auth/logout-all",
 
-    
+    // Garage owner status
+    GARAGE_OWNER_STATUS_API: BaseURL + "/garages/owner/status",
 };
