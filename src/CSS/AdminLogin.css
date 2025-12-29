@@ -1,0 +1,62 @@
+/* src/CSS/AdminLogin.css */
+.auth-root {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6393fb;background-attachment: fixed;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+.auth-card {
+    background: #020617;
+    padding: 28px 26px;
+    border-radius: 18px;
+    width: 320px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    color: #e5e7eb;
+}
+
+.auth-title {
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.auth-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.auth-input {
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #4b5563;
+    background: #020617;
+    color: #f9fafb;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #fb7185;
+}
+
+.auth-error {
+    color: #f97373;
+    font-size: 12px;
+    margin: 4px 0 8px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 9px 0;
+    margin-top: 6px;
+    border-radius: 999px;
+    border: none;
+    background: #fb7185;
+    color: #111827;
+    font-weight: 600;
+    cursor: pointer;
+}

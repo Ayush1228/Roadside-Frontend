@@ -1,0 +1,23 @@
+/* src/CSS/AdminDashboard.css or GarageDashboard.css */
+.dash-root {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #020617;
+    color: #e5e7eb;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+.dash-card {
+    padding: 24px 28px;
+    border-radius: 18px;
+    background: #0f172a;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    min-width: 320px;
+}
+
+.dash-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
