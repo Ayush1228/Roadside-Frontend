@@ -1,30 +1,41 @@
 // src/pages/ForgotPassword.jsx
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import "../CSS/ForgotPassword.css";
+import { getPasswordResetToken } from "../services/operations/authApi";
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
-    const [emailSent, setEmailSent] = useState(false);
+    const [emailSent, setEmailSent] = useState(false);  // ✅ Local state
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    const [resendTimer, setResendTimer] = useState(0);
+    const dispatch = useDispatch();
+
+    // ✅ Timer countdown
+    useEffect(() => {
+        if (resendTimer > 0) {
+            const timer = setTimeout(() => setResendTimer(resendTimer - 1), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [resendTimer]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        console.log(email)
-        // Simulate API call
-        setTimeout(() => {
-            setEmailSent(true);
-            setLoading(false);
-        }, 1500);
-    };
 
-    const handleResend = () => {
-        setLoading(true);
-        setTimeout(() => {
+        try {
+            // ✅ Call API
+            await dispatch(getPasswordResetToken(email, setEmailSent));
+
+            // ✅ Start timer immediately after API call (success handled by thunk)
+            setResendTimer(30);
+
+        } catch (error) {
+            console.log("Error:", error);
+        } finally {
             setLoading(false);
-        }, 1500);
+        }
     };
 
     return (
@@ -36,7 +47,7 @@ const ForgotPassword = () => {
 
                 <p className="forgot-desc">
                     {!emailSent
-                        ? "Have no fear. We'll email you instructions to reset your password. If you don't have access to your email we can try account recovery"
+                        ? "Have no fear. We'll email you instructions to reset your password."
                         : `We have sent the reset email to ${email}`}
                 </p>
 
@@ -58,12 +69,20 @@ const ForgotPassword = () => {
                         </label>
                     )}
 
+                    {/* ✅ SINGLE BUTTON - Perfect conditional logic */}
                     <button
                         type="submit"
                         className="forgot-btn"
-                        disabled={loading}
+                        disabled={loading || resendTimer > 0}
                     >
-                        {loading ? "Sending..." : (!emailSent ? "Submit" : "Resend Email")}
+                        {loading
+                            ? "Sending..."
+                            : resendTimer > 0
+                                ? `Resend (${resendTimer}s)`      // ✅ Timer countdown
+                                : emailSent
+                                    ? "Resend Email"                // ✅ Resend enabled
+                                    : "Submit"                       // ✅ Initial state
+                        }
                     </button>
                 </form>
 
