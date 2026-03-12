@@ -36,27 +36,23 @@ https://github.com/Ayush1228/Roadside-Frontend
 - 🕒 **Fast Assistance Workflow**  
   Enables users to submit service requests quickly in just a few steps.
 
-Roadside assistance platforms typically allow drivers to request help, share their location, and communicate with service providers to resolve breakdowns faster. :contentReference[oaicite:1]{index=1}
-
 ---
 
 # 🛠️ Tech Stack
 
 ### Frontend
+- React.js
+- JavaScript (ES6+)
 - HTML5
 - CSS3
-- JavaScript
-- React.js
 
 ### Tools
 - Git
 - GitHub
 - VS Code
-- swagger
+- Swagger
 
 ---
-
-
 
 # ⚙️ Installation & Setup
 
@@ -72,9 +68,23 @@ git clone https://github.com/Ayush1228/Roadside-Frontend.git
 cd Roadside-Frontend
 ```
 
-### 3️⃣ Run the project
+### 3️⃣ Install dependencies
 
-Open **index.html** in your browser.
+```bash
+npm install
+```
+
+### 4️⃣ Start the development server
+
+```bash
+npm start
+```
+
+The application will start at:
+
+```
+http://localhost:3000
+```
 
 ---
 
@@ -83,10 +93,17 @@ Open **index.html** in your browser.
 ```
 Roadside-Frontend
 │
-├── index.html
-├── style.css
-├── script.js
-├── assets/
+├── public
+│   └── index.html
+│
+├── src
+│   ├── components
+│   ├── pages
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+│
+├── package.json
 └── README.md
 ```
 
